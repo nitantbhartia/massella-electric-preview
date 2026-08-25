@@ -1,0 +1,103 @@
+/* Massella Electric — owner letter in Aaron’s voice. Phone is the only CTA. Not a panel catalog. */
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+:root {
+  --paper: #f6f0e2;
+  --navy: #1a2744;
+  --ink: #1b1914;
+  --rule: #c9bca4;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #4a4338;
+  color: var(--ink);
+  font-family: "Libre Baskerville", Georgia, serif;
+}
+
+.sheet-top {
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 720px; margin: 0 auto; padding: 0.5rem 0.4rem 0;
+  color: #f6f0e2; font-family: "Courier Prime", ui-monospace, monospace; font-size: 0.8rem;
+}
+.lang button { background: transparent; color: #f6f0e2; border: 1px solid #f6f0e255; padding: 0.12rem 0.4rem; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: #f6f0e2; color: #1a2744; }
+
+.letter {
+  max-width: 720px;
+  margin: 0.4rem auto 2.5rem;
+  background: var(--paper);
+  padding: 1.6rem 1.8rem 2rem;
+  box-shadow: 0 18px 40px #0005;
+  border: 1px solid #d8cdb6;
+}
+.head {
+  border-bottom: 3px double var(--navy);
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.1rem;
+  text-align: center;
+}
+.head .co {
+  font-variant: small-caps;
+  letter-spacing: 0.22em;
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+.head h1 { font-size: 1.55rem; margin: 0.25rem 0 0.15rem; font-weight: 700; }
+.date { font-family: "Courier Prime", ui-monospace, monospace; font-size: 0.85rem; color: #4a4338; }
+
+.letter p { margin: 0 0 0.85rem; line-height: 1.55; }
+.letter p.indent { text-indent: 1.4em; }
+
+.phone-stamp {
+  display: block;
+  width: fit-content;
+  margin: 1.1rem auto;
+  border: 3px solid #8b1c1c;
+  color: #8b1c1c;
+  padding: 0.35rem 0.8rem;
+  font-family: "Courier Prime", ui-monospace, monospace;
+  font-size: clamp(1.4rem, 5vw, 2.1rem);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transform: rotate(-1.5deg);
+  font-weight: 700;
+}
+
+.sign {
+  margin-top: 1.2rem;
+  font-style: italic;
+}
+.sign .name { font-style: normal; font-weight: 700; display: block; font-size: 1.05rem; }
+
+.slip {
+  margin-top: 1.6rem;
+  border-top: 2px dashed #8b1c1c;
+  padding-top: 0.9rem;
+  font-family: "Courier Prime", ui-monospace, monospace;
+}
+.slip h2 { font-family: "Courier Prime", ui-monospace, monospace; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 0.5rem; }
+.slip form { display: grid; gap: 0.3rem; }
+.slip label { font-size: 0.78rem; }
+.slip input, .slip textarea {
+  border: 0; border-bottom: 1px solid #1b1914; background: transparent;
+  font-family: "Courier Prime", ui-monospace, monospace; padding: 0.25rem 0;
+}
+.slip textarea { min-height: 3.2rem; }
+.slip button {
+  background: var(--navy); color: var(--paper); border: 0; padding: 0.5rem 0.7rem;
+  font-family: "Courier Prime", ui-monospace, monospace; cursor: pointer;
+}
+.hint { font-size: 0.8rem; color: #4a4338; margin: 0; }
+.meta { font-family: "Courier Prime", ui-monospace, monospace; font-size: 0.78rem; color: #4a4338; margin-top: 1rem; }
+a.plain { color: inherit; }
+
+@media (max-width: 640px) {
+  .letter { margin: 0.3rem; padding: 1.1rem; }
+}
+@media print {
+  .sheet-top, .lang, .slip button { display: none !important; }
+  body { background: #fff; }
+  .letter { box-shadow: none; margin: 0; }
+}
