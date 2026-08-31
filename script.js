@@ -6,7 +6,7 @@
     root.lang = lang;
     document.querySelectorAll("[data-en]").forEach(function (el) {
       var v = el.getAttribute("data-" + lang);
-      if (v != null) el.textContent = v;
+      if (v != null) el.innerHTML = v;
     });
     document.querySelectorAll("[data-en-placeholder]").forEach(function (el) {
       var v = el.getAttribute("data-" + lang + "-placeholder");
