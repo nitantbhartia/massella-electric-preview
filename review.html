@@ -7,54 +7,39 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     .card {
-      max-width: 5in;
-      margin: 1.1rem auto 2rem;
-      background: #f6f1e4;
-      padding: 0.45rem 0.45rem 0.9rem;
-      box-shadow: 0 14px 28px #0006;
+      width: min(calc(100% - 1.2rem), 5.05in);
+      margin: 0.85rem auto 1.6rem;
+      background: #f4ecd8;
+      border: 10px double #8a6a2a;
+      padding: 0.85rem 0.8rem 1rem;
     }
-    .inner {
-      background: #161412;
-      color: #f3ead2;
-      padding: 0.9rem 0.95rem 1rem;
-    }
-    .inner h1 {
-      font-family: Calistoga, Georgia, serif;
-      font-size: 1.55rem;
-      margin: 0 0 0.3rem;
-      color: #f6f1e4;
-    }
-    .card img { width: 200px; height: 200px; display: block; margin: 0.55rem auto; background: #fff; }
-    .actions { display: flex; gap: 0.45rem; flex-wrap: wrap; margin: 0.65rem 0.2rem 0; }
+    .card h1 { font-size: 1.55rem; margin: 0.2rem 0; }
+    .card img { width: 200px; height: 200px; display: block; margin: 0.5rem auto; background: #fff; }
+    .actions { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.55rem; }
     .actions button, .actions a {
-      background: #161412; color: #f6f1e4; border: 0; padding: 0.45rem 0.65rem;
-      text-decoration: none; cursor: pointer; font-family: "Source Code Pro", ui-monospace, monospace;
+      background: #1b2433; color: #f4ecd8; border: 0; padding: 0.4rem 0.6rem;
+      text-decoration: none; cursor: pointer; font-family: "Courier Prime", ui-monospace, monospace;
     }
     @media print {
-      .top, .actions, .lang { display: none !important; }
+      .lang, .actions { display: none !important; }
       body { background: #fff; }
-      .card { box-shadow: none; margin: 0; }
     }
   </style>
 </head>
 <body>
-  <header class="top" style="max-width:5in;margin:0.7rem auto 0">
+  <article class="card">
     <nav class="lang" aria-label="Language">
       <button type="button" data-set="en" aria-pressed="true">EN</button>
       <button type="button" data-set="es" aria-pressed="false">ES</button>
     </nav>
-  </header>
-  <article class="card">
-    <div class="inner">
-      <h1>Massella Electric</h1>
-      <p>Aaron Massella · C-10 #1006970</p>
-      <p><a class="plain" href="tel:+16199099473">(619) 909-9473</a></p>
-      <img src="review-qr.svg" width="200" height="200" alt="QR code to find Massella Electric on Google">
-      <p data-en="Scan to find us on Google and leave a review." data-es="Escanee para encontrarnos en Google y dejar una reseña.">Scan to find us on Google and leave a review.</p>
-    </div>
+    <h1>Massella Electric</h1>
+    <p>Aaron Massella · C-10 #1006970</p>
+    <p><a class="plain" href="tel:+16199099473">(619) 909-9473</a></p>
+    <img src="review-qr.svg" width="200" height="200" alt="QR code to find Massella Electric on Google">
+    <p data-en="Scan to find us on Google and leave a review." data-es="Escanee para encontrarnos en Google y dejar una reseña.">Scan to find us on Google and leave a review.</p>
     <div class="actions">
       <button type="button" id="print-card" data-en="Print this card" data-es="Imprimir esta tarjeta">Print this card</button>
-      <a href="index.html" data-en="Back to the print" data-es="Volver a la foto">Back to the print</a>
+      <a href="index.html" data-en="Back to the warranty" data-es="Volver a la garantía">Back to the warranty</a>
     </div>
   </article>
   <script src="script.js"></script>
