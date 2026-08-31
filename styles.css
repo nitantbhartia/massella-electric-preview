@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Candal&family=Rosario:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@500;700&display=swap");
+/* Massella Electric — the page is a mailed 5×7 Polaroid of a phenolic solar-disconnect plate. */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Calistoga&family=Source+Code+Pro:wght@400;600;700&display=swap");
 
 :root {
-  --ink: #2c241c;
-  --clay: #efe6d4;
-  --clay-d: #d9cbb0;
-  --shelf: #5a5148;
-  --stamp: #7a241c;
-  --brass: #b08948;
+  --ink: #1a1612;
+  --frame: #f6f1e4;
+  --plate: #161412;
+  --face: #f3ead2;
+  --red: #9c1c18;
 }
 
 * { box-sizing: border-box; }
@@ -14,177 +14,196 @@ html, body { margin: 0; }
 body {
   min-height: 100vh;
   color: var(--ink);
-  font-family: Rosario, "Trebuchet MS", sans-serif;
+  font-family: Alegreya, Georgia, serif;
   background:
-    radial-gradient(ellipse at 50% 0, #6a6158 0 26%, transparent 68%),
-    repeating-linear-gradient(90deg, #5a5148 0 16px, #524940 16px 17px);
+    radial-gradient(ellipse at 50% 0, #4a4034 0 30%, transparent 70%),
+    repeating-linear-gradient(45deg, #2a241c 0 10px, #262018 10px 11px);
 }
 
 a { color: inherit; }
 a.plain { text-underline-offset: 2px; }
-button, input, textarea { font-family: inherit; }
 
-.holder {
-  position: relative;
-  max-width: 5.05in;
-  margin: 0.9rem auto 1.4rem;
-  padding: 1.15rem 0.9rem 0.75rem;
-  background:
-    radial-gradient(circle at 50% 18%, #f7f1e4 0 22%, var(--clay) 48%, var(--clay-d) 100%);
-  border-radius: 48% 48% 12px 12px / 18% 18% 8px 8px;
-  border: 1px solid #c4b496;
-  box-shadow:
-    inset 0 0 0 10px #e4d8c0,
-    inset 0 0 0 11px #b9a888,
-    0 18px 32px #0006;
+.polaroid {
+  width: min(5.05in, 94vw);
+  margin: 0.85rem auto 1.6rem;
+  background: var(--frame);
+  padding: 0.42rem 0.42rem 0.35rem;
+  box-shadow: 0 18px 32px #0008;
+  transform: rotate(-1.1deg);
 }
 
-.lug {
-  position: absolute;
-  top: 2.4rem;
-  width: 18px; height: 18px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #ead7a4, var(--brass) 50%, #6a5420);
-  box-shadow: 0 0 0 3px #cfc3a8;
+.top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.22rem;
 }
-.lug.l { left: 0.7rem; }
-.lug.r { right: 0.7rem; }
-.threads {
-  position: absolute;
-  top: 0.55rem; left: 50%;
-  width: 2.4rem; height: 2.4rem;
-  margin-left: -1.2rem;
-  border-radius: 50%;
-  background:
-    repeating-conic-gradient(from 0deg, #cfc3a8 0 8deg, #8a7a60 8deg 12deg);
-  box-shadow: inset 0 0 0 10px var(--clay), 0 0 0 2px #b9a888;
-}
-
-.skirt { text-align: center; padding-top: 2.55rem; }
-.co {
-  margin: 0;
-  font-family: Candal, Georgia, serif;
-  font-size: 1.42rem;
-  line-height: 1.05;
-}
-.skirt h1 {
-  margin: 0.2rem 0 0.25rem;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-.light {
-  margin: 0 0 0.35rem;
-  font-style: italic;
-  font-size: 0.82rem;
-}
-.phone {
-  display: inline-block;
-  font-family: "Source Code Pro", ui-monospace, monospace;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--stamp);
-  text-decoration: none;
-}
-.lang { display: flex; justify-content: flex-end; gap: 0.2rem; position: absolute; top: 0.7rem; right: 0.7rem; }
 .lang button {
   background: transparent;
-  border: 1px solid #2c241c88;
-  color: var(--ink);
-  padding: 0.08rem 0.35rem;
+  color: #4a4034;
+  border: 1px solid #4a403455;
+  padding: 0.08rem 0.32rem;
   cursor: pointer;
   font-family: "Source Code Pro", ui-monospace, monospace;
   font-size: 0.68rem;
 }
 .lang button[aria-pressed="true"] {
-  background: var(--ink);
-  color: var(--clay);
+  background: #1a1612;
+  color: var(--frame);
 }
 
-.who { margin: 0.55rem 0 0.25rem; font-size: 0.8rem; line-height: 1.3; }
-.lic {
-  margin: 0 0 0.4rem;
-  text-align: center;
+.photo {
+  background:
+    radial-gradient(circle at 80% 12%, #6a6258 0 18%, transparent 42%),
+    #3e3a34;
+  padding: 0.38rem;
+}
+
+.plate {
+  background:
+    linear-gradient(180deg, #2a2620 0%, var(--plate) 18%, #1c1814 100%);
+  color: var(--face);
+  border: 3px solid #8a8478;
+  padding: 0.5rem 0.55rem 0.55rem;
+  box-shadow: inset 0 0 0 1px #4a443c;
+}
+
+.warn {
+  margin: 0 0 0.22rem;
   font-family: "Source Code Pro", ui-monospace, monospace;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: var(--red);
+  color: #f6f1e4;
+  display: inline-block;
+  padding: 0.12rem 0.35rem;
+}
+
+h1 {
+  margin: 0.1rem 0 0.12rem;
+  font-family: Calistoga, Georgia, serif;
+  font-size: clamp(1.35rem, 6vw, 1.85rem);
+  line-height: 0.95;
+  font-weight: 400;
+  color: #f6f1e4;
+}
+
+.thrive {
+  margin: 0 0 0.2rem;
+  font-family: Calistoga, Georgia, serif;
+  font-size: 0.82rem;
+  line-height: 1.15;
+  color: #e8dcb8;
+}
+
+.light, .top5, .who {
+  margin: 0 0 0.22rem;
   font-size: 0.78rem;
-  color: var(--stamp);
+  line-height: 1.28;
+}
+.who { font-style: italic; color: #d8ccaa; }
+
+.lic {
+  margin: 0.15rem 0 0.1rem;
+  font-family: "Source Code Pro", ui-monospace, monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #f6f1e4;
+}
+
+.phone {
+  display: inline-block;
+  margin: 0 0 0.35rem;
+  font-family: "Source Code Pro", ui-monospace, monospace;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #f6f1e4;
+  text-decoration: none;
+  border-bottom: 2px solid var(--red);
 }
 
 .jobs {
   list-style: none;
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.35rem;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.12rem 0.5rem;
-  font-family: Candal, Georgia, serif;
-  font-size: 0.72rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.22rem;
+  font-family: "Source Code Pro", ui-monospace, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
-.jobs li { border-bottom: 1px solid #2c241c33; padding: 0.08rem 0; }
+.jobs li {
+  border: 1px solid #c4b896;
+  padding: 0.1rem 0.28rem;
+  color: #e8dcb8;
+}
 
-.pledges {
-  margin: 0 0 0.5rem;
-  padding: 0 0 0 1rem;
-  font-size: 0.74rem;
+.pledge {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.7rem;
   line-height: 1.3;
+  color: #d4c8a8;
+}
+.pledge li {
+  border-top: 1px solid #3a342c;
+  padding: 0.18rem 0 0.12rem;
+}
+
+.caption {
+  padding: 0.4rem 0.15rem 0.15rem;
 }
 
 form {
-  background: #f7f1e4;
-  border: 1px solid #2c241c;
-  padding: 0.45rem 0.5rem 0.5rem;
+  display: grid;
+  gap: 0.08rem;
 }
-.fill {
-  margin: 0 0 0.25rem;
+.fill, form label, form .hint {
   font-family: "Source Code Pro", ui-monospace, monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.08em;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  margin: 0;
 }
-label {
-  display: block;
-  font-family: "Source Code Pro", ui-monospace, monospace;
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  margin: 0.18rem 0 0.04rem;
-}
-input, textarea {
-  width: 100%;
+.fill { color: #5a4a34; margin-bottom: 0.1rem; }
+form input, form textarea {
   border: 0;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px dotted #1a1612;
   background: transparent;
-  padding: 0.12rem 0;
+  font-family: "Source Code Pro", ui-monospace, monospace;
   font-size: 0.85rem;
-  resize: vertical;
+  padding: 0.1rem 0;
+  color: var(--ink);
 }
+form textarea { min-height: 1.9rem; resize: vertical; }
 form button {
-  margin-top: 0.4rem;
-  width: 100%;
-  background: var(--stamp);
-  color: #f7f1e4;
+  background: var(--plate);
+  color: var(--frame);
   border: 0;
-  padding: 0.45rem 0.4rem;
+  padding: 0.4rem 0.5rem;
+  font-family: "Source Code Pro", ui-monospace, monospace;
   cursor: pointer;
-  font-family: Candal, Georgia, serif;
-  font-size: 0.82rem;
+  margin-top: 0.2rem;
+  letter-spacing: 0.03em;
 }
-.hint { margin: 0.25rem 0 0; font-size: 0.72rem; color: var(--stamp); }
+.hint { color: #7a2418; }
 
-.rim {
-  margin-top: 0.45rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.12rem;
-  font-size: 0.68rem;
-  text-align: center;
+.meta {
+  margin: 0.4rem 0 0;
+  font-family: "Source Code Pro", ui-monospace, monospace;
+  font-size: 0.58rem;
+  color: #5a4a34;
 }
 
 @media (max-width: 420px) {
-  .holder { margin: 0.5rem 0.4rem 1rem; }
+  .polaroid { transform: none; }
 }
 @media print {
+  .top, .lang, form button { display: none !important; }
   body { background: #fff; }
-  .lang { display: none !important; }
-  .holder { box-shadow: none; margin: 0; }
+  .polaroid { box-shadow: none; margin: 0; transform: none; }
 }
