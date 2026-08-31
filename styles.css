@@ -100,7 +100,8 @@ button, input, textarea { font-family: inherit; }
   color: var(--clay);
 }
 
-.who { margin: 0.55rem 0 0.25rem; font-size: 0.8rem; line-height: 1.3; }
+.who, .solar { margin: 0.55rem 0 0.25rem; font-size: 0.8rem; line-height: 1.3; }
+.solar { margin-top: 0; font-size: 0.74rem; }
 .lic {
   margin: 0 0 0.4rem;
   text-align: center;
